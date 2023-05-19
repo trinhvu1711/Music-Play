@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_layout">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/pd_2"
+            android:paddingRight="@dimen/pd_2">
+
+            <LinearLayout
+                style="@style/layout_header">
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/header_btn">
+
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        style="@style/header_btn_inner"
+                        android:src="@drawable/ic_back" />
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/header_title_container">
+
+                    <TextView
+                        android:id="@+id/tvHeaderTitle"
+                        style="@style/h3_2"
+                        android:textAlignment="center"
+                        android:text="@string/category_name"
+                        app:layout_constraintStart_toEndOf="@+id/imageButton"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/header_btn">
+
+                    <ImageButton
+                        android:id="@+id/imageOptions"
+                        style="@style/header_btn_inner"
+                        android:src="@drawable/ic_action" />
+                </soup.neumorphism.NeumorphCardView>
+
+            </LinearLayout>
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/bg_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgDisc"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:foreground="@drawable/circle_small"
+                    android:foregroundGravity="center"
+                    android:padding="16dp"
+                    android:src="@drawable/rangkhon"
+                    app:civ_border_color="#595959"
+                    app:civ_border_overlay="true"
+                    app:civ_border_width="50dp" />
+            </soup.neumorphism.NeumorphCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="80"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/pd_2"
+                    android:paddingRight="@dimen/pd_2">
+
+                    <TextView
+                        android:id="@+id/tvSongName"
+                        style="@style/h2_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="50"
+                        android:text="@string/song_name"/>
+
+                    <TextView
+                        android:id="@+id/tvSongSinger"
+                        style="@style/h3_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="50"
+                        android:text="@string/song_signer"/>
+                </LinearLayout>
+
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/bg_primary"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/btnFavorite"
+                        style="@style/header_btn_inner"
+                        android:src="@drawable/ic_favorite_white" />
+                </soup.neumorphism.NeumorphCardView>
+            </LinearLayout>
+
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/bg_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="16dp"
+                    android:orientation="vertical">
+
+                    <SeekBar
+                        android:id="@+id/seekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mg_2"
+                        android:progressDrawable="@drawable/custom_seekbar"
+                        android:thumb="@drawable/thumb_seekbar" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:text="00:00"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvTotalTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:text="00:11"
+                            android:textAlignment="textEnd"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/bg_primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/btnSuffle"
+                        style="@style/header_btn_inner"
+                        android:src="@drawable/ic_shuffle" />
+                </soup.neumorphism.NeumorphCardView>
+
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/bg_primary"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/btnPre"
+                        style="@style/header_btn_inner"
+                        android:src="@drawable/ic_previous" />
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/bg_primary"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/btnPlay"
+                        style="@style/header_btn_inner"
+                        android:src="@drawable/ic_play" />
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/bg_primary"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/btnNext"
+                        style="@style/header_btn_inner"
+                        android:src="@drawable/ic_next" />
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/bg_primary"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/btnRepeat"
+                        style="@style/header_btn_inner"
+                        android:layout_height="53dp"
+                        android:src="@drawable/ic_repeat" />
+                </soup.neumorphism.NeumorphCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
