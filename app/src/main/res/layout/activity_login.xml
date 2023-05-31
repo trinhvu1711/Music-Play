@@ -56,7 +56,7 @@
                     android:id="@+id/edLoginPw"
                     style="@style/ed_primary"
                     android:hint="@string/password"
-                    android:inputType="text"
+                    android:inputType="textPassword"
                     android:layout_marginTop="@dimen/mg_4" />
 
                 <LinearLayout

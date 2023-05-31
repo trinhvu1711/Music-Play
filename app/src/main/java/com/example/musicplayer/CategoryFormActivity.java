@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -73,6 +74,7 @@ public class CategoryFormActivity extends AppCompatActivity {
                     Toast.makeText(CategoryFormActivity.this, "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 }else {
                     submit();
+
                 }
             }
         });
@@ -99,6 +101,7 @@ public class CategoryFormActivity extends AppCompatActivity {
             edName.setText("");
             edDescription.setText("");
             tvImg.setText(getResources().getString(R.string.choose_img));
+            btnSubmit.setText(getResources().getString(R.string.add));
         }
     }
 
@@ -179,6 +182,7 @@ public class CategoryFormActivity extends AppCompatActivity {
                 CategoryMessage categoryMessage = response.body();
                 Toast.makeText(CategoryFormActivity.this, categoryMessage.getMessage(), Toast.LENGTH_SHORT).show();
                 loadingDialog.cancel();
+                init();
                 finish();
             }
 
@@ -204,13 +208,19 @@ public class CategoryFormActivity extends AppCompatActivity {
             public void onResponse(Call<CategoryMessage> call, Response<CategoryMessage> response) {
                 CategoryMessage categoryMessage = response.body();
                 Toast.makeText(getApplicationContext(), categoryMessage.getMessage(), Toast.LENGTH_SHORT).show();
+                init();
+                finish();
             }
 
             @Override
             public void onFailure(Call<CategoryMessage> call, Throwable t) {
+                Log.e("Loi",t.getMessage());
+                init();
+                finish();
             }
         });
-        setEvent();
-        loadData();
+//        setEvent();
+//        loadData();
+
     }
 }

@@ -151,4 +151,10 @@ public class CategoryManagerFragment extends Fragment {
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        init();
+        // Perform any necessary updates here
+    }
 }
