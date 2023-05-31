@@ -95,6 +95,7 @@ public class CategoryFormActivity extends AppCompatActivity {
             edName.setText(data.getName());
             edDescription.setText(data.getDescription());
             tvImg.setText(data.getImage());
+            btnSubmit.setText("Chỉnh sửa");
         } else {
             isEditForm = false;
             tvTitle.setText(getResources().getString(R.string.add_category));
@@ -182,7 +183,6 @@ public class CategoryFormActivity extends AppCompatActivity {
                 CategoryMessage categoryMessage = response.body();
                 Toast.makeText(CategoryFormActivity.this, categoryMessage.getMessage(), Toast.LENGTH_SHORT).show();
                 loadingDialog.cancel();
-                init();
                 finish();
             }
 

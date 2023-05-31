@@ -25,7 +25,7 @@ import com.example.musicplayer.fragment.UserFragment;
 import com.example.musicplayer.fragment.UserManagerFragment;
 import com.example.musicplayer.utilities.Utility;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
+import android.widget.Toast;
 import soup.neumorphism.NeumorphCardView;
 
 public class AdminActivity extends AppCompatActivity {
@@ -146,13 +146,14 @@ public class AdminActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(currentFragment instanceof SongManagerFragment){
                     intent = new Intent(AdminActivity.this, SongFormActivity.class);
+                    startActivity(intent);
                 } else if (currentFragment instanceof CategoryManagerFragment) {
                     intent = new Intent(AdminActivity.this, CategoryFormActivity.class);
+                    startActivity(intent);
                 }
-//                else if (currentFragment instanceof UserManagerFragment) {
-//                    intent = new Intent(AdminActivity.this, UserFormActivity.class);
-//                }
-                startActivity(intent);
+                else if (currentFragment instanceof UserManagerFragment) {
+                    Toast.makeText(getApplicationContext(), "Không được thêm người dùng", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

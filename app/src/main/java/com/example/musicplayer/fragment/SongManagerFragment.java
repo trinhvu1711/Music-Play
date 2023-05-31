@@ -152,7 +152,7 @@ public class SongManagerFragment extends Fragment {
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
-        dialog.getWindow().setGravity(Gravity.CENTER);
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
     @Override
     public void onResume() {

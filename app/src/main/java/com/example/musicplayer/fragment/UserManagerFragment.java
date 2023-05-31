@@ -93,11 +93,6 @@ public class UserManagerFragment extends Fragment  {
             }
         });
 
-        // Create a list of songs
-
-        // Create and set the adapter for the RecyclerView
-
-
     }
 
     private void init() {

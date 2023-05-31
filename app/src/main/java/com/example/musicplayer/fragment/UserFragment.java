@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -17,8 +18,15 @@ import com.example.musicplayer.EditUserActivity;
 import com.example.musicplayer.LoginActivity;
 import com.example.musicplayer.R;
 import com.example.musicplayer.SharedPrefManager;
+import com.example.musicplayer.api.UserApi;
 import com.example.musicplayer.domain.User;
+import com.example.musicplayer.domain.UserMessage;
+import com.example.musicplayer.retrofit.RetrofitClient;
 import com.example.musicplayer.utilities.Utility;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class UserFragment extends Fragment {
     View view;
