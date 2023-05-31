@@ -95,7 +95,18 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:paddingLeft">24dp</item>
         <item name="android:paddingRight">24dp</item>
-        <item name="android:layout_marginTop">16dp</item>
+
+        <item name="height">64dp</item>
+    </style>
+
+    <style name="text_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:layout_marginTop">10dp</item>
         <item name="height">64dp</item>
     </style>
 

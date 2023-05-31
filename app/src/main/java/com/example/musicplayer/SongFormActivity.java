@@ -108,13 +108,13 @@ public class SongFormActivity extends AppCompatActivity {
         if(data != null){
             setSpinnerEdit();
             isEditForm = true;
-            tvTitle.setText(getResources().getString(R.string.add_song));
+            tvTitle.setText("Chỉnh sửa bài hát");
             edName.setText(data.getName());
             edAuthor.setText(data.getAuthor());
             edSinger.setText(data.getSinger());
             tvSongImg.setText(data.getImage());
             tvSongLink.setText(data.getLink());
-            btnSubmit.setText(getResources().getString(R.string.add));
+            btnSubmit.setText("Chỉnh sửa");
         } else{
             setSpinnerAdd();
             isEditForm = false;
@@ -256,11 +256,12 @@ public class SongFormActivity extends AppCompatActivity {
                 System.out.println("---------------");
                 Toast.makeText(SongFormActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT);
 //                System.out.println(response.body().getMessage());
+                finish();
             }
 
             @Override
             public void onFailure(Call<SongMessage> call, Throwable t) {
-
+                finish();
             }
         });
     }

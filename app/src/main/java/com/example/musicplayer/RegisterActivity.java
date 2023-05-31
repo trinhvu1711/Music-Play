@@ -19,7 +19,7 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    Button btnRegister;
+    Button btnRegister,btnCancelRegister;
 
     EditText edFirstName, edLastName, edPhone, edEmail, edPassword, edConfirmPassword;
 
@@ -34,6 +34,12 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void setEvent() {
+        btnCancelRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         btnRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -91,6 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void init()
     {
         btnRegister = findViewById(R.id.btnRegister);
+        btnCancelRegister = findViewById(R.id.btnRegisterCancel);
         edFirstName = findViewById(R.id.edFirstName);
         edLastName = findViewById(R.id.edLastname);
         edPhone = findViewById(R.id.edPhone);
